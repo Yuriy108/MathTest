@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textVar1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="30dp"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textVar4"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textVar2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_dark"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="30dp"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/textVar1"
+        app:layout_constraintEnd_toStartOf="@+id/textVar3"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textVar3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_orange_light"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="30dp"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/textVar4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textVar2" />
+
+    <TextView
+        android:id="@+id/textVar4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="30dp"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textVar1" />
+
+    <TextView
+        android:id="@+id/textQuestion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="192dp"
+        android:background="@android:color/black"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#ffffff"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.026"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
