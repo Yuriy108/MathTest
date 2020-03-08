@@ -7,13 +7,26 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView2Score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:gravity="center"
+        android:text="0/0"
+        android:textColor="#ffffff"
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/textVar1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@android:color/holo_red_light"
         android:gravity="center"
-        android:text="TextView"
+
         android:textSize="30dp"
+        android:onClick="Next"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textVar4"
@@ -27,6 +40,7 @@
         android:gravity="center"
         android:text="TextView"
         android:textSize="30dp"
+        android:onClick="Next"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toTopOf="@+id/textVar1"
         app:layout_constraintEnd_toStartOf="@+id/textVar3"
@@ -41,6 +55,7 @@
         android:text="TextView"
         android:textSize="30dp"
         android:textColor="#ffffff"
+        android:onClick="Next"
         app:layout_constraintBottom_toTopOf="@+id/textVar4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/textVar2" />
@@ -54,6 +69,7 @@
         android:text="TextView"
         android:textSize="30dp"
         android:textColor="#ffffff"
+        android:onClick="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/textVar1" />
@@ -62,14 +78,26 @@
         android:id="@+id/textQuestion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="192dp"
-        android:background="@android:color/black"
+        android:background="@color/colorAccent"
         android:gravity="center"
         android:text="TextView"
         android:textColor="#ffffff"
         android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/textVar2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.026"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTimer" />
+
+    <TextView
+        android:id="@+id/textViewTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/textColorLink"
+        android:gravity="center"
+        android:text="00/00"
+        android:textColor="#ffffff"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
