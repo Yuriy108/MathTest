@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/Backgoround"
+    >
 
     <TextView
         android:id="@+id/textView2Score"
@@ -18,76 +20,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textVar1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_red_light"
-        android:gravity="center"
-
-        android:textSize="30dp"
-        android:onClick="Next"
-        android:textColor="#ffffff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textVar4"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textVar2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_blue_dark"
-        android:gravity="center"
-        android:text="TextView"
-        android:textSize="30dp"
-        android:onClick="Next"
-        android:textColor="#ffffff"
-        app:layout_constraintBottom_toTopOf="@+id/textVar1"
-        app:layout_constraintEnd_toStartOf="@+id/textVar3"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textVar3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_orange_light"
-        android:gravity="center"
-        android:text="TextView"
-        android:textSize="30dp"
-        android:textColor="#ffffff"
-        android:onClick="Next"
-        app:layout_constraintBottom_toTopOf="@+id/textVar4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/textVar2" />
-
-    <TextView
-        android:id="@+id/textVar4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_green_dark"
-        android:gravity="center"
-        android:text="TextView"
-        android:textSize="30dp"
-        android:textColor="#ffffff"
-        android:onClick="Next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/textVar1" />
 
     <TextView
         android:id="@+id/textQuestion"
-        android:layout_width="0dp"
+        android:layout_width="122dp"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
+        android:background="#9C8E93"
         android:gravity="center"
         android:text="TextView"
         android:textColor="#ffffff"
         android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/textVar2"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.026"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTimer" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/textViewTimer"
@@ -100,4 +46,76 @@
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textQuestion">
+
+        <TextView
+            android:id="@+id/textVar1"
+            android:layout_width="93dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:background="#FF9800"
+            android:gravity="center"
+            android:onClick="Next"
+            android:text="aa"
+            android:textColor="#ffffff"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textVar4"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textVar2"
+            android:layout_width="250px"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:background="@android:color/holo_blue_dark"
+            android:gravity="center"
+            android:onClick="Next"
+            android:text="aa"
+            android:textColor="#ffffff"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/textVar1"
+            app:layout_constraintEnd_toStartOf="@+id/textVar3"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/textVar3"
+            android:layout_width="250px"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:background="#673AB7"
+            android:gravity="center"
+            android:onClick="Next"
+            android:text="aa"
+            android:textColor="#ffffff"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/textVar4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/textVar2" />
+
+        <TextView
+            android:id="@+id/textVar4"
+            android:layout_width="250px"
+            android:layout_height="wrap_content"
+            android:background="#009688"
+            android:gravity="center"
+            android:onClick="Next"
+            android:text="aa"
+            android:textColor="#ffffff"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/textVar1" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

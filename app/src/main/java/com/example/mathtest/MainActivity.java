@@ -1,12 +1,16 @@
 package com.example.mathtest;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,6 +18,13 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
+    ConstraintLayout layout;
+    TextView v1;
+    TextView v2;
+    TextView v3;
+    TextView v4;
+    TextView quest;
+    //TextView ;
     SharedPreferences sharedPreferences;
     TextView answer1;
     TextView answer2;
@@ -34,11 +45,41 @@ public class MainActivity extends AppCompatActivity {
     boolean gameOver=false;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        layout = findViewById(R.id.Backgoround);
+        v1=findViewById(R.id.textVar1);
+        Animation animation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.varsanim);
+        v1.startAnimation(animation);
+
+
+
+        quest=findViewById(R.id.textQuestion);
+        Animation animationQ = AnimationUtils.loadAnimation(MainActivity.this, R.anim.zoomin);
+        quest.startAnimation(animationQ);
+
+        v2=findViewById(R.id.textVar2);
+        Animation animation2 = AnimationUtils.loadAnimation(MainActivity.this, R.anim.test);
+        v2.startAnimation(animation2);
+
+        v3=findViewById(R.id.textVar3);
+        Animation animation3 = AnimationUtils.loadAnimation(MainActivity.this, R.anim.varsanim);
+        v3.startAnimation(animation3);
+
+        v4=findViewById(R.id.textVar4);
+        Animation animation4 = AnimationUtils.loadAnimation(MainActivity.this, R.anim.test);
+        v4.startAnimation(animation4);
+
+        time=findViewById(R.id.textViewTimer);
+        Animation animationTime = AnimationUtils.loadAnimation(this, R.anim.lefttoright);
+        time.startAnimation(animationTime);
+
+        score=findViewById(R.id.textView2Score);
+        Animation animationScore = AnimationUtils.loadAnimation(this, R.anim.lefttoright);
+        score.startAnimation(animationScore);
+
         answer1=findViewById(R.id.textVar1);
         answer2=findViewById(R.id.textVar2);
         answer3=findViewById(R.id.textVar3);
@@ -58,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
             }
             else{option.get(i).setText(generateWrogeAnswer());}
         }
-        CountDownTimer countDownTimer= new CountDownTimer(10000,1000) {
+        CountDownTimer countDownTimer= new CountDownTimer(5000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 timeShow=countTime(millisUntilFinished);
@@ -81,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("max",count);
                 intent.putExtra("record",record);
                 startActivity(intent);
-                
+
 
             }
         };
@@ -89,13 +130,27 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     }
 
     private  void generateQuestion(){
+      //  layout.setBackgroundColor(1);
         int x=(int)(Math.random()*max);
         int y=(int)(Math.random()*max);
-        result=x+y;
-        rightAnswer=Integer.toString(x) +" "+"+ "+ Integer.toString(y);
+        int sign= (int)Math.random()*3;
+        switch (sign){
+            case 0:result=x+y;
+                rightAnswer=Integer.toString(x) +" "+"+ "+ Integer.toString(y);
+            break;
+            case 1:result=x-y;
+                rightAnswer=Integer.toString(x) +" "+"- "+ Integer.toString(y);
+            break;
+            case 2:result=x*y;
+                rightAnswer=Integer.toString(x) +" "+"* "+ Integer.toString(y);
+            break;
+        }
+        //result=x+y;
+        //rightAnswer=Integer.toString(x) +" "+"+ "+ Integer.toString(y);
         question.setText(rightAnswer);
         indexResult=(int)(Math.random()*4);
 
@@ -119,12 +174,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void Next(View view) {
-        if(gameOver==false){
+        if(gameOver==false) {
         TextView text=(TextView)view;
         int answer=Integer.parseInt(text.getText().toString());
         if(answer==result){count++;
 
-        }
+        } //else {
+            //layout.setBackgroundColor(250);
+        //}
 
         total++;
         countTotal=Integer.toString(count)+" / "+Integer.toString(total);
